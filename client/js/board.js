@@ -91,7 +91,7 @@ var board = function (element) {
 
 	function paintCrash () {
 		var x = myCar.getX();
-		var ea = $('<div style="height:50px;width:50px"><img src="explosion.gif" style="height:100%;width:100%"></div>').
+		var ea = $('<div class="crash" style="height:50px;width:50px"><img src="explosion.gif" style="height:100%;width:100%"></div>').
 		css({position:"absolute",bottom:"0px", left: x, zIndex:20});
 		$(element).append(ea);
 	}
@@ -136,6 +136,7 @@ var board = function (element) {
 		score=0;
 		level=1;
 		threadTime= 1000;
+		$('.crash').remove();
 		printLevel();
 		printScore();
 	}
