@@ -1,0 +1,44 @@
+<html>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"/></script>
+	<script src="js/car.js"></script>
+	<script src="js/enemies.js"></script>
+	<script src="js/board.js"></script>
+	
+	
+	<body >
+		<div id="canvas" style="height:500px;width:500px;background-color:gray;float:left">
+		</div>
+		<div id="panel" style="float:left;width:100px;margin-left:20px;">
+			<div  style="height:100px;width:100px;background-color:black;color:white;padding-left:10px">
+				<span id="score" style="font-size:60px">0</span><br/><span style="font-size:20px">score</span>
+			</div>
+			<div  style="height:100px;width:100px;background-color:black;color:white;padding-left:10px">
+				<span id="level" style="font-size:60px">1</span><br/><span style="font-size:20px">level</span>
+			</div>
+			<div  style="height:60px;width:100px;background-color:black;color:white;margin-top:15px;padding-left:10px">
+				<button id="reset" style="margin-top:15px">RESET</button>
+			</div>
+		</div>
+		
+	</body>
+
+	<script>
+		$(document).ready(function () {
+
+			var b = new board ( $('#canvas') );
+			b.paint();
+
+			$('body').keydown(function (event) {
+				b.keypress(event);
+			});
+
+			$('#reset').click(function(){
+				b.reset();
+				b.paint();
+			});
+		});
+		
+	</script>
+
+
+</html>
